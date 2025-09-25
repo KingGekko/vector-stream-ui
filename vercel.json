@@ -1,0 +1,48 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/vector-streams",
+      "destination": "/vector-streams.html"
+    },
+    {
+      "source": "/use-cases",
+      "destination": "/use-cases.html"
+    },
+    {
+      "source": "/qvb",
+      "destination": "/qvb.html"
+    },
+    {
+      "source": "/sustainability",
+      "destination": "/sustainability.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

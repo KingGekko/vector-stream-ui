@@ -1,0 +1,10 @@
+# Redirects for Vercel/Netlify compatibility
+/ /index.html 200
+/dashboard /dashboard.html 200
+/vector-streams /vector-streams.html 200
+/use-cases /use-cases.html 200
+/qvb /qvb.html 200
+/sustainability /sustainability.html 200
+
+# API redirects (if needed for backend)
+/api/* https://your-backend-url.com/api/:splat 200
