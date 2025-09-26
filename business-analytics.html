@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics - Vector Streams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-full quantum-bg">
+    <!-- Background Elements -->
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+
+    <!-- Navigation Header -->
+    <nav class="relative z-50 glass-strong border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">VS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Vector Streams</h1>
+                        <div class="text-xs text-zinc-400 font-medium">Advanced Intelligence Platform + QVB</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="flex items-center space-x-8">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="vector-streams.html" class="nav-link">What is a Vector Stream?</a>
+                    <div class="relative group">
+                        <a href="use-cases.html" class="nav-link flex items-center">
+                            Use Cases
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-64 glass-strong rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="intelligence-operations.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Intelligence Operations</a>
+                                <a href="business-analytics.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Business Analytics</a>
+                                <a href="creative-industries.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Creative Industries</a>
+                                <a href="research-development.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Research & Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="qvb.html" class="nav-link">Quantum Vector Bridge</a>
+                    <a href="sustainability.html" class="nav-link">Sustainability</a>
+                </div>
+
+                <!-- Status Indicators -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse status-indicator"></div>
+                        <span class="text-xs font-medium text-white status-text">API Connected</span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-medium text-white">QVB In Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-3 mb-4">
+                    <span class="text-4xl">📊</span>
+                    <h1 class="text-5xl font-bold text-white holographic">Business Analytics</h1>
+                </div>
+                <p class="text-xl text-green-300 mb-4">Data-Driven Business Intelligence</p>
+                <p class="text-lg text-zinc-300 max-w-4xl mx-auto">
+                    Transform your business data into actionable insights. Connect any business API to analyze customer behavior, market trends, operational efficiency, and revenue optimization across all your data sources.
+                </p>
+            </div>
+
+            <!-- Core Business Analytics -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Core Business Analytics</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">👥</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Customer Analytics</h3>
+                                <p class="text-zinc-400">360-degree customer insights</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            Connect to CRM systems, email marketing platforms, customer support tools, and social media APIs to build comprehensive customer profiles and predict behavior patterns.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">CRM Integration</span>
+                                <span class="text-sm text-green-400">Salesforce, HubSpot</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Email Analytics</span>
+                                <span class="text-sm text-blue-400">Mailchimp, SendGrid</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Support Data</span>
+                                <span class="text-sm text-purple-400">Zendesk, Intercom</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">💰</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Revenue Analytics</h3>
+                                <p class="text-zinc-400">Financial performance tracking</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            Analyze revenue streams, pricing optimization, and financial KPIs by connecting to payment processors, accounting software, and e-commerce platforms.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Payment Processing</span>
+                                <span class="text-sm text-green-400">Stripe, PayPal</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Accounting</span>
+                                <span class="text-sm text-blue-400">QuickBooks, Xero</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">E-commerce</span>
+                                <span class="text-sm text-purple-400">Shopify, WooCommerce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">📈</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Market Intelligence</h3>
+                                <p class="text-zinc-400">Competitive analysis and trends</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-6 leading-relaxed">
+                            Monitor market trends, competitor activities, and industry insights through news APIs, social media monitoring, and market research platforms.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">News Monitoring</span>
+                                <span class="text-sm text-purple-400">NewsAPI, Google News</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Social Listening</span>
+                                <span class="text-sm text-blue-400">Twitter, LinkedIn</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <span class="text-sm text-zinc-300">Market Research</span>
+                                <span class="text-sm text-green-400">Statista, IBISWorld</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Business Applications -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Advanced Business Applications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <span class="text-3xl mr-3">🛒</span>
+                            E-commerce Analytics
+                        </h3>
+                        <p class="text-zinc-300 leading-relaxed mb-4">
+                            Optimize your online store with comprehensive e-commerce analytics. Track customer journeys, product performance, inventory levels, and conversion funnels across multiple platforms.
+                        </p>
+                        <div class="bg-zinc-800/50 rounded-lg p-4">
+                            <h4 class="text-lg font-semibold text-white mb-2">E-commerce Platforms:</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-zinc-300">
+                                <span>• Shopify</span>
+                                <span>• WooCommerce</span>
+                                <span>• Magento</span>
+                                <span>• BigCommerce</span>
+                                <span>• Amazon Seller</span>
+                                <span>• eBay</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <span class="text-3xl mr-3">📧</span>
+                            Marketing Automation
+                        </h3>
+                        <p class="text-zinc-300 leading-relaxed mb-4">
+                            Streamline your marketing operations by connecting email platforms, social media management tools, and advertising networks for unified campaign analysis and optimization.
+                        </p>
+                        <div class="bg-zinc-800/50 rounded-lg p-4">
+                            <h4 class="text-lg font-semibold text-white mb-2">Marketing Tools:</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-zinc-300">
+                                <span>• Mailchimp</span>
+                                <span>• Constant Contact</span>
+                                <span>• Hootsuite</span>
+                                <span>• Buffer</span>
+                                <span>• Google Ads</span>
+                                <span>• Facebook Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <span class="text-3xl mr-3">🏭</span>
+                            Supply Chain Analytics
+                        </h3>
+                        <p class="text-zinc-300 leading-relaxed mb-4">
+                            Monitor supplier performance, logistics efficiency, and inventory optimization through APIs from logistics providers, inventory management systems, and supplier portals.
+                        </p>
+                        <div class="bg-zinc-800/50 rounded-lg p-4">
+                            <h4 class="text-lg font-semibold text-white mb-2">Supply Chain APIs:</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-zinc-300">
+                                <span>• FedEx API</span>
+                                <span>• UPS API</span>
+                                <span>• DHL API</span>
+                                <span>• Amazon FBA</span>
+                                <span>• TradeGecko</span>
+                                <span>• Cin7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <span class="text-3xl mr-3">🎯</span>
+                            Sales Performance
+                        </h3>
+                        <p class="text-zinc-300 leading-relaxed mb-4">
+                            Track sales team performance, pipeline health, and conversion rates by integrating CRM systems, sales tools, and communication platforms for comprehensive sales analytics.
+                        </p>
+                        <div class="bg-zinc-800/50 rounded-lg p-4">
+                            <h4 class="text-lg font-semibold text-white mb-2">Sales Tools:</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-zinc-300">
+                                <span>• Salesforce</span>
+                                <span>• HubSpot</span>
+                                <span>• Pipedrive</span>
+                                <span>• Zoho CRM</span>
+                                <span>• Slack</span>
+                                <span>• Zoom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry-Specific Analytics -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Industry-Specific Analytics</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-red-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">🏥</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Healthcare Analytics</h3>
+                                <p class="text-zinc-400">Patient data and operations</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-4 leading-relaxed">
+                            Analyze patient outcomes, resource utilization, and operational efficiency through EHR systems, medical devices, and healthcare APIs while maintaining HIPAA compliance.
+                        </p>
+                        <div class="text-sm text-zinc-400">
+                            <span class="text-red-400">Compliance:</span> HIPAA-ready data processing
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">🏦</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Financial Services</h3>
+                                <p class="text-zinc-400">Risk and compliance monitoring</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-4 leading-relaxed">
+                            Monitor financial transactions, assess risk exposure, and ensure regulatory compliance through banking APIs, credit bureaus, and financial data providers.
+                        </p>
+                        <div class="text-sm text-zinc-400">
+                            <span class="text-blue-400">Standards:</span> PCI DSS compliant
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mr-4">
+                                <span class="text-3xl">🎓</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Education Analytics</h3>
+                                <p class="text-zinc-400">Student and institutional insights</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-300 mb-4 leading-relaxed">
+                            Track student performance, engagement metrics, and institutional effectiveness through LMS platforms, student information systems, and educational assessment tools.
+                        </p>
+                        <div class="text-sm text-zinc-400">
+                            <span class="text-green-400">Privacy:</span> FERPA compliant
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Vector Streams for Business Analytics -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Why Vector Streams for Business Analytics?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🔗</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Universal Data Integration</h3>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Connect to any business tool or platform with just an API key. No complex data pipelines or custom integrations required.
+                        </p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Real-Time Insights</h3>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Get instant business insights as data flows through your systems, enabling faster decision-making and proactive business management.
+                        </p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🧠</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Predictive Analytics</h3>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Advanced AI algorithms predict customer behavior, market trends, and business outcomes with unprecedented accuracy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Transform Your Business Intelligence Today</h2>
+                <p class="text-lg text-zinc-400 mb-8 max-w-3xl mx-auto">
+                    Join forward-thinking businesses that are already leveraging Vector Streams for comprehensive data analysis and strategic insights.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="dashboard.html" class="btn-primary px-8 py-4 rounded-xl text-lg">
+                        🚀 Start Business Analysis
+                    </a>
+                    <a href="vector-streams.html" class="btn-secondary px-8 py-4 rounded-xl text-lg">
+                        📚 Learn About Vector Streams
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
