@@ -17,6 +17,22 @@
       "destination": "/use-cases.html"
     },
     {
+      "source": "/intelligence-operations",
+      "destination": "/intelligence-operations.html"
+    },
+    {
+      "source": "/business-analytics",
+      "destination": "/business-analytics.html"
+    },
+    {
+      "source": "/creative-industries",
+      "destination": "/creative-industries.html"
+    },
+    {
+      "source": "/research-development",
+      "destination": "/research-development.html"
+    },
+    {
       "source": "/qvb",
       "destination": "/qvb.html"
     },
@@ -31,7 +47,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=31536000, immutable"        
         }
       ]
     },
