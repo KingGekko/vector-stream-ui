@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Security - Vector Streams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-full quantum-bg">
+    <!-- Background Elements -->
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+
+    <!-- Navigation Header -->
+    <nav class="relative z-50 glass-strong border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">VS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Vector Streams</h1>
+                        <div class="text-xs text-zinc-400 font-medium">Advanced Intelligence Platform + QVS</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="nav-link">Home</a>
+                    <a href="vector-streams.html" class="nav-link">What is a Vector Stream?</a>
+                    <div class="relative group">
+                        <a href="use-cases.html" class="nav-link flex items-center">
+                            Use Cases
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-80 glass-strong rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-zinc-400 font-medium">Security Intelligence Operations</div>
+                                <a href="physical-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors active">Physical Security</a>
+                                <a href="cyber-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Cyber Security</a>
+                                <a href="open-source-intelligence.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Open Source Intelligence</a>
+                                <div class="border-t border-zinc-700 my-2"></div>
+                                <a href="use-cases.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Use Cases</a>
+                                <a href="creative-industries.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Creative Industries</a>
+                                <a href="research-development.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Research & Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="qvs.html" class="nav-link">Quantum Vector Streams</a>
+                    <a href="sustainability.html" class="nav-link">Sustainability</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-300 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 glass-strong border-t border-zinc-800">
+                    <div class="px-4 py-2 space-y-2">
+                        <a href="dashboard.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Home</a>
+                        <a href="vector-streams.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">What is a Vector Stream?</a>
+                        <div class="px-3 py-2 text-white font-medium">Use Cases</div>
+                        <div class="pl-6 space-y-1">
+                            <div class="px-3 py-1 text-zinc-400 text-xs font-medium">Security Intelligence Operations</div>
+                            <a href="physical-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Physical Security</a>
+                            <a href="cyber-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Cyber Security</a>
+                            <a href="open-source-intelligence.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Open Source Intelligence</a>
+                            <a href="use-cases.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Use Cases</a>
+                            <a href="creative-industries.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Creative Industries</a>
+                            <a href="research-development.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Research & Development</a>
+                        </div>
+                        <a href="qvs.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Quantum Vector Streams</a>
+                        <a href="sustainability.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Sustainability</a>
+                    </div>
+                </div>
+
+                <!-- Status Indicators -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse status-indicator"></div>
+                        <span class="text-xs font-medium text-white status-text">API Connected</span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-medium text-white">QVS In Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-3 mb-4">
+                    <span class="text-4xl">🏢</span>
+                    <h1 class="text-5xl font-bold text-white holographic">Physical Security</h1>
+                </div>
+                <p class="text-xl text-purple-300 mb-4">Advanced Physical Security Intelligence</p>
+                <p class="text-lg text-zinc-300 max-w-4xl mx-auto">
+                    Transform physical security operations with real-time monitoring, access control analytics, and threat assessment across all security systems and platforms.
+                </p>
+            </div>
+
+            <!-- Use Cases Overview -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Physical Security Use Cases</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🎥</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Video Surveillance</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Real-time video analytics and monitoring</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🔐</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Access Control</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Smart access management and analytics</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🚨</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Alarm Systems</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Intelligent alarm monitoring and response</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">👥</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Personnel Tracking</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Staff monitoring and safety analytics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 50+ Physical Security Platforms with APIs -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">50+ Physical Security Platforms with APIs</h2>
+                <p class="text-lg text-zinc-300 text-center mb-8 max-w-4xl mx-auto">
+                    Connect to leading physical security platforms and systems through their APIs for comprehensive security intelligence and monitoring.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <!-- Video Surveillance & Analytics -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Axis Communications</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">IP cameras & video analytics</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Hikvision</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video surveillance systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Dahua Technology</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Security cameras & NVRs</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Bosch Security</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video management systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Avigilon</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video analytics & AI</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Milestone Systems</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video management platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Genetec</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Unified security platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">ExacqVision</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video management software</p>
+                    </div>
+
+                    <!-- Access Control Systems -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Honeywell</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control & building systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Johnson Controls</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Building automation & security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Schneider Electric</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Building management systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Siemens</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Building technologies</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">ASSA ABLOY</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access solutions</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Salto Systems</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Electronic locking systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Kaba</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control solutions</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Paxton</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control systems</p>
+                    </div>
+
+                    <!-- Alarm & Monitoring Systems -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">ADT</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Security monitoring services</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Vivint</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Smart home security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">SimpliSafe</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">DIY home security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Ring</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Video doorbells & security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Nest</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Smart home security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Arlo</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Wireless security cameras</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Wyze</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Affordable security cameras</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Eufy</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Home security systems</p>
+                    </div>
+
+                    <!-- Perimeter Security -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Senstar</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Perimeter intrusion detection</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Fiber SenSys</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Fiber optic perimeter security</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">FLIR Systems</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Thermal imaging & detection</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Optex</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Motion detection sensors</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Crowcon</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Gas detection systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Honeywell Analytics</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Gas & flame detection</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Det-Tronics</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Fire & gas detection</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Tyco</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Fire & security systems</p>
+                    </div>
+
+                    <!-- Biometric Systems -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Suprema</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Biometric access control</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">ZKTeco</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Biometric time & attendance</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">HID Global</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Identity & access management</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Morpho</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Biometric identification</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">NEC</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Facial recognition systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Cognitec</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Face recognition technology</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Aware</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Biometric software</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Crossmatch</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Biometric authentication</p>
+                    </div>
+
+                    <!-- Security Management Platforms -->
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">LenelS2</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control software</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Software House</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control systems</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Gallagher</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Access control solutions</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Brivo</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Cloud-based access control</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Kisi</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Smart access control</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Openpath</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Mobile access control</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Proxy</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Digital identity platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Kastle Systems</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Managed security services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Benefits -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Why Choose Vector Streams for Physical Security?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Real-Time Monitoring</h3>
+                        <p class="text-zinc-300">Monitor all security systems in real-time with instant alerts and automated responses.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🔗</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Unified Platform</h3>
+                        <p class="text-zinc-300">Integrate all security systems into one unified platform for comprehensive oversight.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🧠</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">AI-Powered Analytics</h3>
+                        <p class="text-zinc-300">Advanced AI analytics for threat detection, pattern recognition, and predictive security.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Enhance Your Physical Security?</h2>
+                <p class="text-lg text-zinc-400 mb-8 max-w-3xl mx-auto">
+                    Join leading organizations using Vector Streams to transform their physical security operations with real-time intelligence and AI-powered analytics.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="dashboard.html" class="btn-primary px-8 py-4 rounded-xl text-lg">
+                        🚀 Get Started Now
+                    </a>
+                    <a href="cyber-security.html" class="btn-secondary px-8 py-4 rounded-xl text-lg">
+                        🔒 Explore Cyber Security
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

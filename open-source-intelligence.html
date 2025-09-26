@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Intelligence - Vector Streams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-full quantum-bg">
+    <!-- Background Elements -->
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+
+    <!-- Navigation Header -->
+    <nav class="relative z-50 glass-strong border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">VS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Vector Streams</h1>
+                        <div class="text-xs text-zinc-400 font-medium">Advanced Intelligence Platform + QVS</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="nav-link">Home</a>
+                    <a href="vector-streams.html" class="nav-link">What is a Vector Stream?</a>
+                    <div class="relative group">
+                        <a href="use-cases.html" class="nav-link flex items-center">
+                            Use Cases
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-80 glass-strong rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-zinc-400 font-medium">Security Intelligence Operations</div>
+                                <a href="physical-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Physical Security</a>
+                                <a href="cyber-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Cyber Security</a>
+                                <a href="open-source-intelligence.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors active">Open Source Intelligence</a>
+                                <div class="border-t border-zinc-700 my-2"></div>
+                                <a href="use-cases.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Use Cases</a>
+                                <a href="creative-industries.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Creative Industries</a>
+                                <a href="research-development.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Research & Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="qvs.html" class="nav-link">Quantum Vector Streams</a>
+                    <a href="sustainability.html" class="nav-link">Sustainability</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-300 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 glass-strong border-t border-zinc-800">
+                    <div class="px-4 py-2 space-y-2">
+                        <a href="dashboard.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Home</a>
+                        <a href="vector-streams.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">What is a Vector Stream?</a>
+                        <div class="px-3 py-2 text-white font-medium">Use Cases</div>
+                        <div class="pl-6 space-y-1">
+                            <div class="px-3 py-1 text-zinc-400 text-xs font-medium">Security Intelligence Operations</div>
+                            <a href="physical-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Physical Security</a>
+                            <a href="cyber-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Cyber Security</a>
+                            <a href="open-source-intelligence.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Open Source Intelligence</a>
+                            <a href="use-cases.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Use Cases</a>
+                            <a href="creative-industries.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Creative Industries</a>
+                            <a href="research-development.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Research & Development</a>
+                        </div>
+                        <a href="qvs.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Quantum Vector Streams</a>
+                        <a href="sustainability.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Sustainability</a>
+                    </div>
+                </div>
+
+                <!-- Status Indicators -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse status-indicator"></div>
+                        <span class="text-xs font-medium text-white status-text">API Connected</span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-medium text-white">QVS In Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-3 mb-4">
+                    <span class="text-4xl">🔍</span>
+                    <h1 class="text-5xl font-bold text-white holographic">Open Source Intelligence</h1>
+                </div>
+                <p class="text-xl text-purple-300 mb-4">Advanced OSINT & Intelligence Gathering</p>
+                <p class="text-lg text-zinc-300 max-w-4xl mx-auto">
+                    Transform intelligence gathering with comprehensive OSINT tools, social media monitoring, and advanced data collection capabilities across all platforms and sources.
+                </p>
+            </div>
+
+            <!-- OSINT Categories -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">OSINT Categories & Tools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🌐</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Web Intelligence</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Website analysis & domain intelligence</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📱</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Social Media</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Social media monitoring & analysis</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📧</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Email Intelligence</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Email analysis & verification</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🔍</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Search Engines</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Advanced search & data mining</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Intelligence Tools -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">🌐 Web Intelligence Tools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Shodan</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Internet-connected device search</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Censys</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Internet-wide scanning platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">VirusTotal</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Malware & URL analysis</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">URLVoid</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Website reputation checker</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Whois</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Domain registration lookup</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">DNS Lookup</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">DNS record analysis</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Archive.org</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Website historical data</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">BuiltWith</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Website technology profiler</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Intelligence -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">📱 Social Media Intelligence</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Twitter API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Twitter data & analytics</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Facebook Graph</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Facebook data access</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Instagram API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Instagram content analysis</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">LinkedIn API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Professional network data</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Reddit API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Reddit content & discussions</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">YouTube API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">YouTube video & channel data</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">TikTok API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">TikTok content analysis</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Telegram API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Telegram bot & data access</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search & Data Mining -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">🔍 Search & Data Mining Tools</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Google Search API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Custom search engine</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Bing Search API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Bing web search</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">DuckDuckGo API</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Privacy-focused search</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Elasticsearch</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Search & analytics engine</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Apache Solr</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Enterprise search platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Splunk</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Data platform & search</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Algolia</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Search-as-a-service</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Apache Lucene</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Full-text search library</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email & Communication Intelligence -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">📧 Email & Communication Intelligence</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Have I Been Pwned</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Data breach checker</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">EmailRep</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email reputation service</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Hunter.io</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email finder & verifier</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Clearbit</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email & company data</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">ZeroBounce</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email validation service</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">SendGrid</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email delivery platform</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Mailgun</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Email API service</p>
+                    </div>
+                    <div class="glass-strong rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-white font-semibold">Postmark</h4>
+                            <span class="text-xs text-green-400">API ✓</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">Transactional email service</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Benefits -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Why Choose Vector Streams for OSINT?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🔍</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Comprehensive Intelligence</h3>
+                        <p class="text-zinc-300">Gather intelligence from multiple sources including web, social media, and communication platforms in real-time.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Real-Time Monitoring</h3>
+                        <p class="text-zinc-300">Monitor and analyze data streams in real-time with advanced filtering and alerting capabilities.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🧠</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">AI-Powered Analysis</h3>
+                        <p class="text-zinc-300">Leverage AI and machine learning for pattern recognition, sentiment analysis, and predictive intelligence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Enhance Your OSINT Capabilities?</h2>
+                <p class="text-lg text-zinc-400 mb-8 max-w-3xl mx-auto">
+                    Join leading organizations using Vector Streams to transform their intelligence gathering with comprehensive OSINT tools and real-time data analysis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="dashboard.html" class="btn-primary px-8 py-4 rounded-xl text-lg">
+                        🚀 Get Started Now
+                    </a>
+                    <a href="physical-security.html" class="btn-secondary px-8 py-4 rounded-xl text-lg">
+                        🏢 Explore Physical Security
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security - Vector Streams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-full quantum-bg">
+    <!-- Background Elements -->
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+    <div class="floating-3d"></div>
+
+    <!-- Navigation Header -->
+    <nav class="relative z-50 glass-strong border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">VS</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Vector Streams</h1>
+                        <div class="text-xs text-zinc-400 font-medium">Advanced Intelligence Platform + QVS</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="nav-link">Home</a>
+                    <a href="vector-streams.html" class="nav-link">What is a Vector Stream?</a>
+                    <div class="relative group">
+                        <a href="use-cases.html" class="nav-link flex items-center">
+                            Use Cases
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute top-full left-0 mt-2 w-80 glass-strong rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-zinc-400 font-medium">Security Intelligence Operations</div>
+                                <a href="physical-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Physical Security</a>
+                                <a href="cyber-security.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors active">Cyber Security</a>
+                                <a href="open-source-intelligence.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Open Source Intelligence</a>
+                                <div class="border-t border-zinc-700 my-2"></div>
+                                <a href="use-cases.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Use Cases</a>
+                                <a href="creative-industries.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Creative Industries</a>
+                                <a href="research-development.html" class="block px-4 py-2 text-sm text-white hover:bg-purple-600/20 transition-colors">Research & Development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="qvs.html" class="nav-link">Quantum Vector Streams</a>
+                    <a href="sustainability.html" class="nav-link">Sustainability</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-300 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 glass-strong border-t border-zinc-800">
+                    <div class="px-4 py-2 space-y-2">
+                        <a href="dashboard.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Home</a>
+                        <a href="vector-streams.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">What is a Vector Stream?</a>
+                        <div class="px-3 py-2 text-white font-medium">Use Cases</div>
+                        <div class="pl-6 space-y-1">
+                            <div class="px-3 py-1 text-zinc-400 text-xs font-medium">Security Intelligence Operations</div>
+                            <a href="physical-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Physical Security</a>
+                            <a href="cyber-security.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Cyber Security</a>
+                            <a href="open-source-intelligence.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Open Source Intelligence</a>
+                            <a href="use-cases.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Use Cases</a>
+                            <a href="creative-industries.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Creative Industries</a>
+                            <a href="research-development.html" class="block px-3 py-2 text-zinc-300 hover:bg-purple-600/20 rounded-lg transition-colors text-sm">Research & Development</a>
+                        </div>
+                        <a href="qvs.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Quantum Vector Streams</a>
+                        <a href="sustainability.html" class="block px-3 py-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">Sustainability</a>
+                    </div>
+                </div>
+
+                <!-- Status Indicators -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse status-indicator"></div>
+                        <span class="text-xs font-medium text-white status-text">API Connected</span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-3 py-1 glass rounded-full">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span class="text-xs font-medium text-white">QVS In Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-3 mb-4">
+                    <span class="text-4xl">🛡️</span>
+                    <h1 class="text-5xl font-bold text-white holographic">Cyber Security</h1>
+                </div>
+                <p class="text-xl text-purple-300 mb-4">Advanced Cyber Defense Intelligence</p>
+                <p class="text-lg text-zinc-300 max-w-4xl mx-auto">
+                    Transform cybersecurity operations with real-time threat detection, automated response, and comprehensive security intelligence across all security teams and platforms.
+                </p>
+            </div>
+
+            <!-- Security Teams Overview -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Security Teams & Operations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🔵</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Blue Team</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Defensive security operations & monitoring</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-red-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🔴</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Red Team</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Offensive security testing & simulation</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🟣</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Purple Team</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Collaborative security operations</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📋</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">GRC Analysts</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Governance, risk & compliance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blue Team Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">🔵 Blue Team Operations</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🔍</span>
+                            Threat Detection & Monitoring
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🛡️</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">SIEM Platforms</h4>
+                                        <p class="text-xs text-zinc-400">Security information & event management</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔎</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">EDR Solutions</h4>
+                                        <p class="text-xs text-zinc-400">Endpoint detection & response</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🌐</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Network Monitoring</h4>
+                                        <p class="text-xs text-zinc-400">Network traffic analysis & monitoring</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">☁️</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Cloud Security</h4>
+                                        <p class="text-xs text-zinc-400">Cloud workload protection</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">⚡</span>
+                            Incident Response
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🚨</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">SOAR Platforms</h4>
+                                        <p class="text-xs text-zinc-400">Security orchestration & automation</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📊</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Threat Intelligence</h4>
+                                        <p class="text-xs text-zinc-400">Threat intelligence platforms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔧</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Forensics Tools</h4>
+                                        <p class="text-xs text-zinc-400">Digital forensics & investigation</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📱</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Mobile Security</h4>
+                                        <p class="text-xs text-zinc-400">Mobile threat defense</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Team Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">🔴 Red Team Operations</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🎯</span>
+                            Penetration Testing
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Vulnerability Scanners</h4>
+                                        <p class="text-xs text-zinc-400">Automated vulnerability assessment</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🌐</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Web Application Testing</h4>
+                                        <p class="text-xs text-zinc-400">Web app security testing tools</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">💻</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Exploitation Frameworks</h4>
+                                        <p class="text-xs text-zinc-400">Penetration testing frameworks</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔐</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Password Cracking</h4>
+                                        <p class="text-xs text-zinc-400">Password security testing tools</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🎭</span>
+                            Social Engineering
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📧</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Phishing Simulation</h4>
+                                        <p class="text-xs text-zinc-400">Phishing awareness training</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">👥</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">OSINT Tools</h4>
+                                        <p class="text-xs text-zinc-400">Open source intelligence gathering</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📱</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Physical Security Testing</h4>
+                                        <p class="text-xs text-zinc-400">Physical penetration testing</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🎯</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Red Team Platforms</h4>
+                                        <p class="text-xs text-zinc-400">Comprehensive red teaming tools</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purple Team Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">🟣 Purple Team Operations</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🤝</span>
+                            Collaborative Security
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔄</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Continuous Testing</h4>
+                                        <p class="text-xs text-zinc-400">Ongoing security validation</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📈</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Security Metrics</h4>
+                                        <p class="text-xs text-zinc-400">Security performance measurement</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🎓</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Security Training</h4>
+                                        <p class="text-xs text-zinc-400">Cybersecurity education platforms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔧</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Security Automation</h4>
+                                        <p class="text-xs text-zinc-400">Automated security workflows</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">📊</span>
+                            Security Analytics
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🧠</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Behavioral Analytics</h4>
+                                        <p class="text-xs text-zinc-400">User & entity behavior analysis</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Threat Hunting</h4>
+                                        <p class="text-xs text-zinc-400">Proactive threat detection</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📈</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Risk Assessment</h4>
+                                        <p class="text-xs text-zinc-400">Security risk evaluation</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🎯</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Attack Simulation</h4>
+                                        <p class="text-xs text-zinc-400">Breach & attack simulation</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRC Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">📋 GRC Analysts</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">📜</span>
+                            Governance & Compliance
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📋</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Compliance Management</h4>
+                                        <p class="text-xs text-zinc-400">Regulatory compliance platforms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Audit Management</h4>
+                                        <p class="text-xs text-zinc-400">Security audit & assessment tools</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📊</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Policy Management</h4>
+                                        <p class="text-xs text-zinc-400">Security policy & procedure management</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📈</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Reporting & Analytics</h4>
+                                        <p class="text-xs text-zinc-400">Security reporting & dashboards</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">⚠️</span>
+                            Risk Management
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🎯</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Risk Assessment</h4>
+                                        <p class="text-xs text-zinc-400">Enterprise risk management</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Vulnerability Management</h4>
+                                        <p class="text-xs text-zinc-400">Vulnerability assessment & tracking</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📋</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Asset Management</h4>
+                                        <p class="text-xs text-zinc-400">IT asset & configuration management</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🛡️</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Security Frameworks</h4>
+                                        <p class="text-xs text-zinc-400">NIST, ISO, SOC2 compliance tools</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud & Network Security Context -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">☁️ Cloud & Network Security Context</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">☁️</span>
+                            Cloud Security
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔒</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">CSPM Platforms</h4>
+                                        <p class="text-xs text-zinc-400">Cloud security posture management</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🛡️</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">CWPP Solutions</h4>
+                                        <p class="text-xs text-zinc-400">Cloud workload protection platforms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">CASB Platforms</h4>
+                                        <p class="text-xs text-zinc-400">Cloud access security brokers</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">📊</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Cloud Monitoring</h4>
+                                        <p class="text-xs text-zinc-400">Cloud security monitoring & analytics</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🌐</span>
+                            Network Security
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔥</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Firewall Management</h4>
+                                        <p class="text-xs text-zinc-400">Next-generation firewall platforms</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Network Monitoring</h4>
+                                        <p class="text-xs text-zinc-400">Network traffic analysis & monitoring</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🛡️</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">Intrusion Detection</h4>
+                                        <p class="text-xs text-zinc-400">Network intrusion detection systems</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 glass rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🔐</span>
+                                    <div>
+                                        <h4 class="text-white font-semibold">VPN & Remote Access</h4>
+                                        <p class="text-xs text-zinc-400">Secure remote access solutions</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs text-green-400">API Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integration Benefits -->
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-white mb-12 text-center">Why Choose Vector Streams for Cyber Security?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Real-Time Threat Detection</h3>
+                        <p class="text-zinc-300">Detect and respond to threats in real-time with advanced AI-powered analytics and automated response capabilities.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🔗</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Unified Security Platform</h3>
+                        <p class="text-zinc-300">Integrate all security tools and platforms into one unified system for comprehensive security operations.</p>
+                    </div>
+                    <div class="glass-strong rounded-xl p-8 text-center">
+                        <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">🧠</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">AI-Powered Intelligence</h3>
+                        <p class="text-zinc-300">Leverage advanced AI and machine learning for threat hunting, behavioral analysis, and predictive security.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Enhance Your Cyber Security?</h2>
+                <p class="text-lg text-zinc-400 mb-8 max-w-3xl mx-auto">
+                    Join leading organizations using Vector Streams to transform their cybersecurity operations with real-time threat detection and AI-powered security intelligence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="dashboard.html" class="btn-primary px-8 py-4 rounded-xl text-lg">
+                        🚀 Get Started Now
+                    </a>
+                    <a href="open-source-intelligence.html" class="btn-secondary px-8 py-4 rounded-xl text-lg">
+                        🔍 Explore OSINT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
